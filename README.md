@@ -1,8 +1,8 @@
 # DEC Wave Propagation on Periodic Foam Complexes
 
-**Author:** Alex Toader
+**Author:** Alex Toader (toader_alexandru@yahoo.com)
 **Date:** January 2026
-**Purpose:** Technical summary for review
+**Preprint:** [doi.org/10.5281/zenodo.18454889](https://doi.org/10.5281/zenodo.18454889)
 
 ---
 
