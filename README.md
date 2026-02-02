@@ -176,11 +176,4 @@ OPENBLAS_NUM_THREADS=1 python3 -m pytest tests/physics/14_test_i4_az_cross_check
 |---------------|-------|----------------------------------|
 | incidence.py  | 609   | d0, d1, face-cell tracking       |
 
----
-
-## Questions for Review
-
-1. **Hodge star construction:** The dual geometry uses cell centers of the foam complex (not circumcenters). Is the Voronoi dual well-defined for non-Delaunay foam complexes? The orthogonality test (|n_hat . d_hat| > 0.99) passes, but is this sufficient?
-
-2. **Generalized EVP:** The gauge equation is solved as a generalized eigenvalue problem with *1 as mass matrix. Is there a preferred solver strategy for this (we use scipy.linalg.eigh)?
 
