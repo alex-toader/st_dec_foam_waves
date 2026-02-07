@@ -2,7 +2,7 @@
 
 **Author:** Alex Toader (toader_alexandru@yahoo.com)
 **Date:** January 2026
-**Preprint:** [doi.org/10.5281/zenodo.18454889](https://doi.org/10.5281/zenodo.18454889)
+**Preprint:** [doi.org/10.5281/zenodo.18519519](https://doi.org/10.5281/zenodo.18519519)
 
 ---
 
@@ -121,7 +121,7 @@ Identical angular patterns (r ~ 1.0), gauge sector ~60x more isotropic (alpha ~ 
 
 ## Test Suite
 
-341 tests across 16 files. All pass on macOS / Python 3.9.6 / SciPy.
+370 tests across 21 files. All pass on macOS / Python 3.9.6 / SciPy.
 
 **To run all tests** (one file at a time):
 ```bash
