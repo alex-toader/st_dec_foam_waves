@@ -12,7 +12,7 @@ import numpy as np
 import pytest
 import warnings
 
-from core_math_v2.builders import build_sc_supercell_periodic, build_fcc_supercell_periodic
+from core_math.builders import build_sc_supercell_periodic, build_fcc_supercell_periodic
 from physics.bloch import (
     BlochComplex,
     DisplacementBloch,

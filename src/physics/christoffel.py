@@ -35,8 +35,8 @@ from scipy.optimize import least_squares
 from typing import Tuple, Dict
 
 from .bloch import DisplacementBloch
-from core_math_v2.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
-from core_math_v2.builders.multicell_periodic import build_bcc_supercell_periodic
+from core_math.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
+from core_math.builders.multicell_periodic import build_bcc_supercell_periodic
 
 
 def christoffel_matrix(k_hat: np.ndarray, C11: float, C12: float, C44: float) -> np.ndarray:

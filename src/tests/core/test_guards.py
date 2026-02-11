@@ -1,5 +1,5 @@
 """
-Guard and Edge Case Tests for core_math_v2
+Guard and Edge Case Tests for core_math
 ==========================================
 
 Tests for boundary conditions, guards, and edge cases.
@@ -16,9 +16,9 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from core_math_v2.builders import build_bcc_foam_periodic
-from core_math_v2.builders.solids_periodic import build_sc_supercell_periodic
-from core_math_v2.spec.structures import canonical_face
+from core_math.builders import build_bcc_foam_periodic
+from core_math.builders.solids_periodic import build_sc_supercell_periodic
+from core_math.spec.structures import canonical_face
 
 
 # =============================================================================
@@ -115,8 +115,8 @@ def test_canonical_face_triangle():
 
 def test_faces_per_edge_matches_contract_kelvin():
     """P3.1: Kelvin mesh['faces_per_edge'] matches actual histogram."""
-    from core_math_v2.builders import build_kelvin_cell_mesh
-    from core_math_v2.operators.incidence import build_d1
+    from core_math.builders import build_kelvin_cell_mesh
+    from core_math.operators.incidence import build_d1
 
     mesh = build_kelvin_cell_mesh()
     d1 = build_d1(mesh['V'], mesh['E'], mesh['F'])
@@ -132,7 +132,7 @@ def test_faces_per_edge_matches_contract_kelvin():
 
 def test_faces_per_edge_matches_contract_bcc_foam():
     """P3.2: BCC foam mesh['faces_per_edge'] matches actual histogram."""
-    from core_math_v2.operators.incidence import build_d1
+    from core_math.operators.incidence import build_d1
 
     mesh = build_bcc_foam_periodic(N=2)
     d1 = build_d1(mesh['V'], mesh['E'], mesh['F'])
@@ -150,9 +150,9 @@ def test_faces_per_edge_matches_contract_bcc_foam():
 
 def test_wp_type_a_contract_validation():
     """P3.1: WP Type A passes validate_mesh."""
-    from core_math_v2.builders.weaire_phelan import build_wp_type_a
-    from core_math_v2.spec.structures import validate_mesh, create_mesh
-    from core_math_v2.spec.constants import COMPLEX_SURFACE
+    from core_math.builders.weaire_phelan import build_wp_type_a
+    from core_math.spec.structures import validate_mesh, create_mesh
+    from core_math.spec.constants import COMPLEX_SURFACE
 
     V, E, F, v_to_idx = build_wp_type_a()
     mesh = create_mesh(V, E, F, COMPLEX_SURFACE, name="wp_type_a")
@@ -163,9 +163,9 @@ def test_wp_type_a_contract_validation():
 
 def test_wp_type_b_contract_validation():
     """P3.1: WP Type B passes validate_mesh."""
-    from core_math_v2.builders.weaire_phelan import build_wp_type_b
-    from core_math_v2.spec.structures import validate_mesh, create_mesh
-    from core_math_v2.spec.constants import COMPLEX_SURFACE
+    from core_math.builders.weaire_phelan import build_wp_type_b
+    from core_math.spec.structures import validate_mesh, create_mesh
+    from core_math.spec.constants import COMPLEX_SURFACE
 
     V, E, F, v_to_idx = build_wp_type_b()
     mesh = create_mesh(V, E, F, COMPLEX_SURFACE, name="wp_type_b")
@@ -180,7 +180,7 @@ def test_wp_type_b_contract_validation():
 
 def test_kappa_wp_type_a_diagnostic():
     """κ WP Type A: parity succeeds, doesn't invent dimensions."""
-    from core_math_v2.analysis.weaire_phelan_kappa import compute_wp_kappa
+    from core_math.analysis.weaire_phelan_kappa import compute_wp_kappa
 
     result = compute_wp_kappa('A')
 
@@ -202,7 +202,7 @@ def test_kappa_wp_type_a_diagnostic():
 
 def test_kappa_wp_type_b_diagnostic():
     """κ WP Type B: vertices centrosymmetric, but parity may or may not be graph automorphism."""
-    from core_math_v2.analysis.weaire_phelan_kappa import compute_wp_kappa
+    from core_math.analysis.weaire_phelan_kappa import compute_wp_kappa
 
     result = compute_wp_kappa('B')
 
@@ -223,7 +223,7 @@ def test_kappa_wp_type_b_diagnostic():
 
 def test_kappa_wp_reports_fixed_points():
     """κ WP: reports fixed vertices/edges for Lefschetz analysis."""
-    from core_math_v2.analysis.weaire_phelan_kappa import compute_wp_kappa
+    from core_math.analysis.weaire_phelan_kappa import compute_wp_kappa
 
     for cell_type in ['A', 'B']:
         result = compute_wp_kappa(cell_type)
@@ -244,29 +244,29 @@ def test_kappa_wp_reports_fixed_points():
 
 def test_import_smoke_builders():
     """P4.1: Import builders module works."""
-    from core_math_v2 import builders
+    from core_math import builders
     assert hasattr(builders, 'build_kelvin_cell_mesh')
     assert hasattr(builders, 'build_bcc_foam_periodic')
 
 
 def test_import_smoke_operators():
     """P4.2: Import operators module works."""
-    from core_math_v2 import operators
+    from core_math import operators
     assert hasattr(operators, 'build_incidence_matrices')
     assert hasattr(operators, 'build_parity_operator')
 
 
 def test_import_smoke_analysis():
     """P4.3: Import analysis module works."""
-    from core_math_v2 import analysis
+    from core_math import analysis
     assert hasattr(analysis, 'compute_kappa_for_polyhedron')
 
 
 def test_smoke_pipeline_kelvin():
     """P4.4: Full pipeline: builder → validate → operators."""
-    from core_math_v2.builders import build_kelvin_cell_mesh
-    from core_math_v2.spec.structures import validate_mesh
-    from core_math_v2.operators.incidence import build_operators_from_mesh
+    from core_math.builders import build_kelvin_cell_mesh
+    from core_math.spec.structures import validate_mesh
+    from core_math.operators.incidence import build_operators_from_mesh
 
     # Build
     mesh = build_kelvin_cell_mesh()

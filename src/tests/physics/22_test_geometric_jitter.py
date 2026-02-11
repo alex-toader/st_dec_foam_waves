@@ -70,7 +70,7 @@ from collections import Counter
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 
-from core_math_v2.builders.c15_periodic import get_c15_points, build_c15_supercell_periodic
+from core_math.builders.c15_periodic import get_c15_points, build_c15_supercell_periodic
 from physics.bloch import DisplacementBloch
 
 

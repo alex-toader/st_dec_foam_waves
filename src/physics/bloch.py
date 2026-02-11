@@ -42,7 +42,7 @@ import warnings
 import numpy as np
 from typing import Tuple, Dict, List
 
-from core_math_v2.operators.incidence import build_d0, build_d1
+from core_math.operators.incidence import build_d0, build_d1
 
 from .constants import (
     ZERO_K_THRESHOLD,

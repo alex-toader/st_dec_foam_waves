@@ -73,5 +73,5 @@ DISPERSION_K_MIN = 1e-3
 # Import in one place to avoid scattered aliases
 def get_kelvin_builder():
     """Get the Kelvin supercell builder (alias for BCC)."""
-    from core_math_v2.builders import build_bcc_supercell_periodic
+    from core_math.builders import build_bcc_supercell_periodic
     return build_bcc_supercell_periodic

@@ -564,13 +564,13 @@ def build_operators_from_mesh(mesh: dict) -> dict:
 
 
 # Self-test when run directly
-# Run with: python -m core_math_v2.operators.incidence (from ST_8/)
+# Run with: python -m core_math.operators.incidence (from ST_8/)
 if __name__ == "__main__":
     import sys
     import os
     # Add ST_8 to path for proper imports
     sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-    from core_math_v2.builders import build_kelvin_cell_mesh, build_bcc_foam_periodic
+    from core_math.builders import build_kelvin_cell_mesh, build_bcc_foam_periodic
 
     print("=" * 60)
     print("INCIDENCE OPERATORS - VERIFICATION")

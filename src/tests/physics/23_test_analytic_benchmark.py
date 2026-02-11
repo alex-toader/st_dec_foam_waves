@@ -76,7 +76,7 @@ import numpy as np
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
 
-from core_math_v2.builders.solids_periodic import build_sc_supercell_periodic
+from core_math.builders.solids_periodic import build_sc_supercell_periodic
 from physics.bloch import DisplacementBloch
 
 

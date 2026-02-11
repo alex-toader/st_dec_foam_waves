@@ -22,7 +22,7 @@ import pytest
 import numpy as np
 from collections import defaultdict
 
-from core_math_v2.builders.c15_periodic import (
+from core_math.builders.c15_periodic import (
     build_c15_supercell_periodic,
     verify_c15_foam_structure,
     get_c15_points,

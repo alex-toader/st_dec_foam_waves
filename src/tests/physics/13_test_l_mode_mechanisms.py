@@ -45,10 +45,10 @@ from physics.bath import (
     build_vertex_laplacian_bloch,
     build_divergence_operator_bloch,
 )
-from core_math_v2.builders.c15_periodic import build_c15_supercell_periodic
-from core_math_v2.builders.multicell_periodic import build_bcc_supercell_periodic
-from core_math_v2.builders.weaire_phelan_periodic import build_wp_supercell_periodic
-from core_math_v2.builders.solids_periodic import build_fcc_supercell_periodic
+from core_math.builders.c15_periodic import build_c15_supercell_periodic
+from core_math.builders.multicell_periodic import build_bcc_supercell_periodic
+from core_math.builders.weaire_phelan_periodic import build_wp_supercell_periodic
+from core_math.builders.solids_periodic import build_fcc_supercell_periodic
 
 
 # =============================================================================

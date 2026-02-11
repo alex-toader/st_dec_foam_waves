@@ -62,8 +62,8 @@ from physics.bath import (
     D_eff_square_penalty,
     verify_square_penalty_psd,
 )
-from core_math_v2.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
-from core_math_v2.builders.c15_periodic import build_c15_supercell_periodic
+from core_math.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
+from core_math.builders.c15_periodic import build_c15_supercell_periodic
 
 
 # =============================================================================

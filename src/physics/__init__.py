@@ -2,7 +2,7 @@
 Physics Layer for ST_8
 ======================
 
-Built on top of core_math_v2 (pure geometry/DEC).
+Built on top of core_math (pure geometry/DEC).
 
 Modules:
     constants - Numerical thresholds and defaults

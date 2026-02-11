@@ -1504,9 +1504,9 @@ def test_tfoam_birefringence_n2_from_foam():
     import sys
     import importlib.util
     sys.path.insert(0, '.')
-    from core_math_v2.builders import build_bcc_supercell_periodic
-    from core_math_v2.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
-    from core_math_v2.builders.c15_periodic import build_c15_supercell_periodic
+    from core_math.builders import build_bcc_supercell_periodic
+    from core_math.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
+    from core_math.builders.c15_periodic import build_c15_supercell_periodic
     from physics.bloch import DisplacementBloch
 
     # Import dispersion tools

@@ -88,7 +88,7 @@ import pytest
 
 from physics.bloch import DisplacementBloch
 from physics.christoffel import measure_velocities, golden_spiral
-from core_math_v2.builders.multicell_periodic import build_bcc_supercell_periodic
+from core_math.builders.multicell_periodic import build_bcc_supercell_periodic
 
 
 # =============================================================================
@@ -694,7 +694,7 @@ def test_multi_structure():
 
     Verifies that the bridge works for all structures, not just Kelvin.
     """
-    from core_math_v2.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
+    from core_math.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
 
     print()
     print("=" * 70)

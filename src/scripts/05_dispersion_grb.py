@@ -118,9 +118,9 @@ from physics.bath import (
     build_divergence_operator_bloch,
     compute_discrete_schur,
 )
-from core_math_v2.builders.multicell_periodic import build_bcc_supercell_periodic
-from core_math_v2.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
-from core_math_v2.builders.c15_periodic import build_c15_supercell_periodic
+from core_math.builders.multicell_periodic import build_bcc_supercell_periodic
+from core_math.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
+from core_math.builders.c15_periodic import build_c15_supercell_periodic
 
 # =============================================================================
 # PHYSICAL CONSTANTS
@@ -1089,8 +1089,8 @@ def test_t8_multi_structure():
     2. Ranking is preserved: WP < Kelvin < FCC (consistent with anisotropy)
     3. L/T identification works for all structures
     """
-    from core_math_v2.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
-    from core_math_v2.builders.c15_periodic import build_c15_supercell_periodic
+    from core_math.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
+    from core_math.builders.c15_periodic import build_c15_supercell_periodic
 
     # Build all structures
     V_c15, E_c15, F_c15, _ = build_c15_supercell_periodic(N=1, L_cell=4.0)
@@ -1450,8 +1450,8 @@ def test_t14_ell_cell_upper_bound():
     This means the test is NOT "conditional on ℓ_cell = ℓ_P exactly";
     it passes for any microstructure scale below ~10⁹ Planck lengths.
     """
-    from core_math_v2.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
-    from core_math_v2.builders.c15_periodic import build_c15_supercell_periodic
+    from core_math.builders import build_fcc_supercell_periodic, build_wp_supercell_periodic
+    from core_math.builders.c15_periodic import build_c15_supercell_periodic
 
     E = E_GRB_GEV  # 10 GeV
     bound = grb_bound(E, E_QG_QUADRATIC)

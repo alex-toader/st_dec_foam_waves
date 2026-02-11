@@ -1,5 +1,5 @@
 """
-Global constants for core_math_v2
+Global constants for core_math
 =================================
 
 All tolerances and magic numbers in ONE place.

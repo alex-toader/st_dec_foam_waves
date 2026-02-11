@@ -71,7 +71,7 @@ _src_dir = Path(__file__).resolve().parents[1]
 if str(_src_dir) not in sys.path:
     sys.path.insert(0, str(_src_dir))
 
-from core_math_v2.builders import (
+from core_math.builders import (
     build_wp_supercell_periodic,
     build_bcc_supercell_periodic,
     build_fcc_supercell_periodic,

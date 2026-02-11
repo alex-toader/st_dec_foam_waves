@@ -1,5 +1,5 @@
 """
-Comprehensive Tests for core_math_v2
+Comprehensive Tests for core_math
 ====================================
 
 Tests all mathematical invariants:
@@ -19,7 +19,7 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from core_math_v2.builders import (
+from core_math.builders import (
     build_kelvin_cell_mesh,
     build_bcc_foam_periodic,
     build_sc_solid_periodic,
@@ -31,18 +31,18 @@ from core_math_v2.builders import (
     build_sc_supercell_periodic,
     build_fcc_supercell_periodic,
 )
-from core_math_v2.builders.weaire_phelan import (
+from core_math.builders.weaire_phelan import (
     build_wp_type_a,
     build_wp_type_b,
     verify_wp_surface_topology,
 )
-from core_math_v2.operators import (
+from core_math.operators import (
     build_operators_from_mesh,
     build_parity_from_mesh,
     build_incidence_matrices,
 )
-from core_math_v2.operators.incidence import build_d2
-from core_math_v2.spec import (
+from core_math.operators.incidence import build_d2
+from core_math.spec import (
     validate_mesh,
     COMPLEX_SURFACE,
     COMPLEX_FOAM,
@@ -204,11 +204,11 @@ def test_lefschetz_kelvin_strict():
     produces wrong dim_bridge/dim_ring but still has result['lefschetz_holds']=True
     due to a bug in the checking logic.
     """
-    from core_math_v2.operators.parity import (
+    from core_math.operators.parity import (
         build_parity_operator,
         parity_decomposition,
     )
-    from core_math_v2.operators.incidence import get_cycle_space
+    from core_math.operators.incidence import get_cycle_space
 
     mesh = build_kelvin_cell_mesh()
     V, E, F = mesh['V'], mesh['E'], mesh['F']
@@ -387,7 +387,7 @@ def test_T9_truncated_cube_planarity():
 
 def test_truncated_cube_kappa():
     """Truncated Cube gives κ=137 (same topology as Kelvin)."""
-    from core_math_v2.analysis.kappa import compute_kappa_for_polyhedron
+    from core_math.analysis.kappa import compute_kappa_for_polyhedron
     V, E, F, v_to_idx = build_truncated_cube()
     result = compute_kappa_for_polyhedron(V, E, F, v_to_idx)
 

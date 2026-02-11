@@ -10,7 +10,7 @@ NOT EXPORTED (use direct import if needed):
 - compute_* functions: use operators, belong in analysis layer
 
 MOVED TO analysis/:
-- random_foam.py: Voronoi foam statistics (use core_math_v2.analysis.random_foam)
+- random_foam.py: Voronoi foam statistics (use core_math.analysis.random_foam)
 """
 
 # === Contract wrappers (return mesh dicts) ===

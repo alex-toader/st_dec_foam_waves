@@ -318,13 +318,13 @@ def build_parity_from_mesh(mesh: dict, v_to_idx: dict = None) -> dict:
 
 
 # Self-test when run directly
-# Run with: python -m core_math_v2.operators.parity (from ST_8/)
+# Run with: python -m core_math.operators.parity (from ST_8/)
 if __name__ == "__main__":
     import sys
     import os
     # Add ST_8 to path for proper imports
     sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-    from core_math_v2.builders import build_kelvin_cell_mesh
+    from core_math.builders import build_kelvin_cell_mesh
 
     print("=" * 60)
     print("PARITY AND BRIDGE/RING DECOMPOSITION - VERIFICATION")

@@ -3,7 +3,7 @@ ST_8 Source Code
 ================
 
 Modules:
-    core_math_v2 - Discrete Exterior Calculus (DEC) library
+    core_math - Discrete Exterior Calculus (DEC) library
     physics      - Physics layer (Bloch, bath, phonons)
     tests        - Test suite
 

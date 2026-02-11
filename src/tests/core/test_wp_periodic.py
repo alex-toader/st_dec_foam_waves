@@ -23,7 +23,7 @@ import numpy as np
 import pytest
 from collections import defaultdict
 
-from core_math_v2.builders.weaire_phelan_periodic import (
+from core_math.builders.weaire_phelan_periodic import (
     build_wp_supercell_periodic,
     get_wp_periodic_topology,
     verify_wp_foam_structure,
@@ -549,7 +549,7 @@ class TestHardening:
         V, E, F = build_wp_supercell_periodic(N)
 
         # Canonicalize all faces and check for duplicates
-        from core_math_v2.builders.weaire_phelan_periodic import canonical_face
+        from core_math.builders.weaire_phelan_periodic import canonical_face
         canonical_faces = [canonical_face(f) for f in F]
         canonical_set = set(canonical_faces)
 
@@ -907,7 +907,7 @@ class TestT6DualitySanity:
         """
         from scipy.spatial import Voronoi
         from itertools import product
-        from core_math_v2.builders.weaire_phelan_periodic import (
+        from core_math.builders.weaire_phelan_periodic import (
             wrap_pos, unwrap_coords_to_reference
         )
 
@@ -975,7 +975,7 @@ class TestT7NumericRobustness:
 
     def test_wrap_decimals_6_still_works(self):
         """Builder should work with WRAP_DECIMALS=6 (less precision)."""
-        import core_math_v2.builders.weaire_phelan_periodic as wp_module
+        import core_math.builders.weaire_phelan_periodic as wp_module
 
         # Save original
         orig_decimals = wp_module.WRAP_DECIMALS
@@ -1000,7 +1000,7 @@ class TestT7NumericRobustness:
 
     def test_wrap_decimals_10_still_works(self):
         """Builder should work with WRAP_DECIMALS=10 (more precision)."""
-        import core_math_v2.builders.weaire_phelan_periodic as wp_module
+        import core_math.builders.weaire_phelan_periodic as wp_module
 
         orig_decimals = wp_module.WRAP_DECIMALS
         orig_tol = wp_module.WRAP_TOL
@@ -1025,7 +1025,7 @@ class TestT7NumericRobustness:
         Note: Exact V/E/F counts may legitimately vary with precision
         (rounding can affect dedup), but invariants must hold.
         """
-        import core_math_v2.builders.weaire_phelan_periodic as wp_module
+        import core_math.builders.weaire_phelan_periodic as wp_module
 
         orig_decimals = wp_module.WRAP_DECIMALS
         orig_tol = wp_module.WRAP_TOL
